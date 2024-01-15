@@ -2,10 +2,11 @@ import java.util.ArrayList;
 import com.google.gson.GsonBuilder;
 public class Main {
     private static ArrayList<Block> blockChain = new ArrayList<>();
-    private final static int difficulty = 5;
+    // higher difficulty = longer solving time
+    private final static int DIFFICULTY = 5;
 
     public static void main(String[] args) {
-        Miner miner = new Miner(difficulty);
+        Miner miner = new Miner(DIFFICULTY);
 
         // Create transaction
         String firstTransaction = "Thomas pays Lucy 5 CC";
@@ -42,8 +43,8 @@ public class Main {
                 }
 
                 // block was mined
-                String hashTarget = new String(new char[difficulty]).replace('\0', '0');
-                if (!block.getHash().substring(0, difficulty).equals(hashTarget)){
+                String hashTarget = new String(new char[DIFFICULTY]).replace('\0', '0');
+                if (!block.getHash().substring(0, DIFFICULTY).equals(hashTarget)){
                     System.out.println("Block wasn't mined.");
                     return false;
                 }

@@ -1,15 +1,15 @@
-class Miner {
+public class Miner {
     private int difficulty;
     private String target;
 
-    Miner(int difficulty){
+    public Miner(int difficulty){
         this.difficulty = difficulty;
 
         // creates a string of '0' of difficulty size
         this.target = new String(new char[difficulty]).replace('\0', '0');
     }
 
-    Block mineBlock(String transaction, String previousHash){
+    public Block mineBlock(String transaction, String previousHash){
         System.out.println("Mining block... ");
 
         long nonce = 0;

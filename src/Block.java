@@ -1,30 +1,30 @@
-class Block {
+public class Block {
     private String hash;
     private String previousHash;
     private String transaction;
     // nonce is number that blockchain miners are solving with
     private long nonce;
 
-    Block(String hash, String previousHash, String transaction, long nonce){
+    public Block(String hash, String previousHash, String transaction, long nonce){
         this.hash = hash;
         this.previousHash = previousHash;
         this.transaction = transaction;
         this.nonce = nonce;
     }
 
-    String getHash(){
+    public String getHash(){
         return this.hash;
     }
 
-    String getPreviousHash(){
+    public String getPreviousHash(){
         return this.previousHash;
     }
 
-    String getTransaction(){
+    public String getTransaction(){
         return this.transaction;
     }
 
-    long getNonce(){
+    public long getNonce(){
         return this.nonce;
     }
 }
